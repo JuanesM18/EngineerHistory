@@ -1,20 +1,20 @@
-/* Activar el evento cuando se da click flecha hacia abajo */
-document.addEventListener("keydown", function (tecla) {
-  /* Condicional de validación, si se cumple la condición
-    de los parentesis el programa hace lo que esta entre las llaves */
-  if (tecla.keyCode == 32) {
-    console.log("Espacio");
-  }
+/* Creamos función para pulsar la tecla A */
+const pulsarA = () => {
+  console.log("Presionaste la tecla a");
+};
 
-  if (tecla.keyCode == 38) {
-    console.log("Flecha arriba");
-  }
+const pulsarAB = () => {
+  console.log("Presionaste la tecla a y b");
+};
 
-  if (tecla.keyCode == 37) {
-    console.log("Flecha izquierda");
-  }
-  
-  if (tecla.keyCode == 39) {
-    console.log("Flecha derecha");
-  }
-});
+const pulsarIzqDer = () => {
+  console.log("Presionaste izquierda y derecha");
+};
+
+const configuracionTeclado = { prevent_repeat: true };
+const eventoTeclado = new window.keypress.Listener(this, configuracionTeclado);
+eventoTeclado.simple_combo("a", pulsarA);
+eventoTeclado.simple_combo("a b", pulsarAB);
+eventoTeclado.simple_combo("left right", pulsarIzqDer);
+
+
